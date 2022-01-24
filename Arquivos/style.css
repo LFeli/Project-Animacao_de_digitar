@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive;
+}
+
+:root{
+    --branco: #FFFFFF;
+    --background: #1B192B;
+    --laranja: #EA9165;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--background);
+
+}
+
+.conjunto{
+    display: inline-flex;
+}
+
+.conjunto .texto-estatico{
+    font-size: 60px;
+    font-weight: 400;
+    color: var(--branco);
+}
+
+.conjunto .texto-dinamico{
+    margin-left: 15px;
+    line-height: 80px;
+    height: 80px;
+    overflow: hidden;
+    
+}
+
+
+
+.texto-dinamico li{
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    color: var(--laranja);
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+    
+}
+
+@keyframes slide {
+    100%{
+        top: -320px;
+    }
+}
+
+.texto-dinamico li span{
+    position: relative;
+
+}
+
+.texto-dinamico li span:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--laranja);
+    left: 0;
+    animation: typing 3s steps(20) infinite;
+    background: var(--background);
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
